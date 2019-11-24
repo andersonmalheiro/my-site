@@ -4,42 +4,61 @@ import React from 'react';
 import './style.css';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const Header = ({ siteTitle }) => (
-  <header className="header">
-    <div className="brand">
-      <h1 className="title">
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          AMC
-        </Link>
-      </h1>
-    </div>
-    <div className="links">
-      <Link to="/" className="link">
-        Home
-      </Link>
-      <Link to="/" className="link">
-        Posts
-      </Link>
-    </div>
-    <div className="social-media">
-      <div className="icon">
-        <FaInstagram />
+const links = [
+  {
+    to: '/',
+    name: 'Home',
+  },
+  {
+    to: '/posts',
+    name: 'Posts',
+  },
+];
+
+const Header = ({ siteTitle }) => {
+  const { pathname } = window.location;
+
+  return (
+    <header className="header">
+      <div className="brand">
+        <h1 className="title">
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            AMC
+          </Link>
+        </h1>
       </div>
-      <div className="icon">
-        <FaLinkedin />
+      <div className="links">
+        {links.map(link => {
+          return (
+            <Link
+              to={link.to}
+              className={pathname === link.to ? 'link link-current' : 'link'}
+            >
+              {link.name}
+            </Link>
+          );
+        })}
       </div>
-      <div className="icon">
-        <FaGithub />
+      <div className="social-media">
+        <div className="icon">
+          <FaInstagram />
+        </div>
+        <div className="icon">
+          <FaLinkedin />
+        </div>
+        <div className="icon">
+          <FaGithub />
+        </div>
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
