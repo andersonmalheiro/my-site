@@ -52,30 +52,42 @@ const IndexPage = () => (
       <div className={styles.stack}>
         <img
           className={styles.tech}
-          src="assets/icons/javascript.png"
+          src={'assets/icons/javascript.png'}
           alt="javascript"
         />
         <img
           className={styles.tech}
-          src="assets/icons/typescript.png"
+          src={'assets/icons/typescript.png'}
           alt="typescript"
         />
-        <img className={styles.tech} src="assets/icons/node.png" alt="node" />
-        <img className={styles.tech} src="assets/icons/react.png" alt="react" />
-        <img className={styles.tech} src="assets/icons/redux.png" alt="redux" />
         <img
           className={styles.tech}
-          src="assets/icons/angular.png"
+          src={'/assets/icons/node.png'}
+          alt="node"
+        />
+        <img
+          className={styles.tech}
+          src={'/assets/icons/react.png'}
+          alt="react"
+        />
+        <img
+          className={styles.tech}
+          src={'/assets/icons/redux.png'}
+          alt="redux"
+        />
+        <img
+          className={styles.tech}
+          src={'assets/icons/angular.png'}
           alt="angular"
         />
         <img
           className={styles.tech}
-          src="assets/icons/python.png"
+          src={'assets/icons/python.png'}
           alt="python"
         />
         <img
           className={styles.tech}
-          src="assets/icons/django.png"
+          src={'assets/icons/django.png'}
           alt="django"
         />
       </div>
