@@ -57,7 +57,7 @@
 }
 
 .link-current {
-  border-bottom: 5px solid white;
+  /* border-bottom: 5px solid white; */
   background: rgba(255, 255, 255, 0.05);
 }
 

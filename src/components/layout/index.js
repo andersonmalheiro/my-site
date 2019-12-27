@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from '../header';
 import './layout.css';
+import { FaHeart } from 'react-icons/fa';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

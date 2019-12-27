@@ -54,41 +54,49 @@ const IndexPage = () => (
           className={styles.tech}
           src={'assets/icons/javascript.png'}
           alt="javascript"
+          title="Javascript"
         />
         <img
           className={styles.tech}
           src={'assets/icons/typescript.png'}
           alt="typescript"
+          title="Typescript"
         />
         <img
           className={styles.tech}
           src={'/assets/icons/node.png'}
           alt="node"
+          title="NodeJS"
         />
         <img
           className={styles.tech}
           src={'/assets/icons/react.png'}
           alt="react"
+          title="ReactJS"
         />
         <img
           className={styles.tech}
           src={'/assets/icons/redux.png'}
           alt="redux"
+          title="Redux"
         />
         <img
           className={styles.tech}
           src={'assets/icons/angular.png'}
           alt="angular"
+          title="Angular 2+"
         />
         <img
           className={styles.tech}
           src={'assets/icons/python.png'}
           alt="python"
+          title="Python 3"
         />
         <img
           className={styles.tech}
           src={'assets/icons/django.png'}
           alt="django"
+          title="Django"
         />
       </div>
     </div>
