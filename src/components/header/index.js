@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
@@ -9,51 +9,96 @@ const links = [
     to: '/',
     name: 'Home',
   },
-  {
-    to: '/posts',
-    name: 'Posts',
-  },
+  // {
+  //   to: '/posts',
+  //   name: 'Posts',
+  // },
 ];
 
 const Header = ({ siteTitle }) => {
-  const { pathname } = window.location;
+  const [pathname, setPathname] = useState('');
+
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
 
   return (
     <header className="header">
-      <div className="brand">
-        <h1 className="title">
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
-            AMC
-          </Link>
-        </h1>
-      </div>
-      <div className="links">
-        {links.map(link => {
-          return (
+      <div className="main-header">
+        <div className="brand">
+          <h1 className="title">
             <Link
-              to={link.to}
-              className={pathname === link.to ? 'link link-current' : 'link'}
+              to="/"
+              style={{
+                color: `white`,
+                textDecoration: `none`,
+              }}
             >
-              {link.name}
+              AMC
             </Link>
-          );
-        })}
+          </h1>
+        </div>
+        <div className="links">
+          {links.map((link, index) => {
+            return (
+              <Link
+                key={index}
+                to={link.to}
+                className={pathname === link.to ? 'link link-current' : 'link'}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
+        <div className="social-media">
+          <div className="icon">
+            <a href="https://instagram.com/_anderson_97">
+              <FaInstagram />
+            </a>
+          </div>
+          <div className="icon">
+            <a href="https://www.linkedin.com/in/andersonmalheiro">
+              <FaLinkedin />
+            </a>
+          </div>
+          <div className="icon">
+            <a href="https://github.com/andersonmalheiro">
+              <FaGithub />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className="social-media">
-        <div className="icon">
-          <FaInstagram />
+      <div className="mobile-header">
+        <div className="links">
+          {links.map((link, index) => {
+            return (
+              <Link
+                key={index}
+                to={link.to}
+                className={pathname === link.to ? 'link link-current' : 'link'}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
-        <div className="icon">
-          <FaLinkedin />
-        </div>
-        <div className="icon">
-          <FaGithub />
+        <div className="social-media">
+          <div className="icon">
+            <a href="https://instagram.com/_anderson_97">
+              <FaInstagram />
+            </a>
+          </div>
+          <div className="icon">
+            <a href="https://www.linkedin.com/in/andersonmalheiro">
+              <FaLinkedin />
+            </a>
+          </div>
+          <div className="icon">
+            <a href="https://github.com/andersonmalheiro">
+              <FaGithub />
+            </a>
+          </div>
         </div>
       </div>
     </header>

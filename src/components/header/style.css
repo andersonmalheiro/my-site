@@ -1,17 +1,25 @@
 .header {
-  background: rebeccapurple;
+  background: #3b5094;
   margin-bottom: '1.45rem';
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex: 1;
   height: 4rem;
   padding: 0 3rem;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  z-index: 1;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
 }
 
 .brand {
@@ -72,8 +80,50 @@
   transition: all 0.3s ease-in-out;
 }
 
+.icon a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .icon:hover {
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
+  filter: brightness(0.8);
   transition: all 0.3s ease-in-out;
+}
+
+.mobile-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background: #667bc2;
+  flex: 1;
+  padding: 0 10px;
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 5px 0;
+  }
+
+  .main-header {
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+  }
+
+  .main-header > .links {
+    display: none;
+  }
+
+  .main-header > .social-media {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    min-height: 40px;
+  }
+
+  .mobile-header > .social-media {
+    flex: 0.3;
+  }
 }
