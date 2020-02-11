@@ -1,106 +1,89 @@
 import React from 'react';
-
 import Layout from '../../components/layout';
-import Image from '../../components/image';
 import SEO from '../../components/seo';
+import styles from './styles.module.scss';
+import Sidebar from '../../components/sidebar';
 
-import styles from './styles.module.css';
-import { FaEnvelope } from 'react-icons/fa';
+const IndexPage = () => {
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <div className={styles.container}>
-      <Image className={styles.avatar} />
-      <h1>Anderson Malheiro de Carvalho</h1>
-      <h2>Desenvolvedor Front-end</h2>
-      <a
-        href="mailto:malheiroanderson97@gmail.com"
-        className={`${styles.button} ${styles.btn_blue}`}
-      >
-        <FaEnvelope className={styles.btn_prefix} />
-        Entre em contato
-      </a>
-      <div className={styles.divider}></div>
-      <p>
-        Olá, sou o Anderson. Sou técnico em Redes de Computadores e bacharel em
-        Sistemas de Informação pela{' '}
-        <a
-          href="https://www.fapce.edu.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Faculdade Paraíso do Ceará
-        </a>
-        . Sou um cara apaixonado por tecnologia, games e amo a área de
-        desenvolvimento.
-      </p>
-      <p>
-        Atualmente sou desenvolvedor front-end na{' '}
-        <a
-          href="https://www.brisanet.com.br"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Brisanet Telecomunicações
-        </a>
-        , trabalhando principalmente no desenvolvimento e manutenção dos
-        sistemas internos da empresa.
-      </p>
-      <div className={styles.divider}></div>
-      <h2>Minha stack</h2>
-      <div className={styles.stack}>
-        <img
-          className={styles.tech}
-          src={'assets/icons/javascript.png'}
-          alt="javascript"
-          title="Javascript"
-        />
-        <img
-          className={styles.tech}
-          src={'assets/icons/typescript.png'}
-          alt="typescript"
-          title="Typescript"
-        />
-        <img
-          className={styles.tech}
-          src={'/assets/icons/node.png'}
-          alt="node"
-          title="NodeJS"
-        />
-        <img
-          className={styles.tech}
-          src={'/assets/icons/react.png'}
-          alt="react"
-          title="ReactJS"
-        />
-        <img
-          className={styles.tech}
-          src={'/assets/icons/redux.png'}
-          alt="redux"
-          title="Redux"
-        />
-        <img
-          className={styles.tech}
-          src={'assets/icons/angular.png'}
-          alt="angular"
-          title="Angular 2+"
-        />
-        <img
-          className={styles.tech}
-          src={'assets/icons/python.png'}
-          alt="python"
-          title="Python 3"
-        />
-        <img
-          className={styles.tech}
-          src={'assets/icons/django.png'}
-          alt="django"
-          title="Django"
-        />
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Sidebar />
+      <div className={styles.content}>
+        <section id="home" className={styles.sectionHome}>
+          <div className={styles.me}>
+            <img src={'/assets/me.jpg'} alt="me" className={styles.avatar} />
+            <h1 className={styles.title}>Anderson Malheiro de Carvalho</h1>
+            <h2 className={styles.subtitle}>Front-end Developer</h2>
+          </div>
+        </section>
+        <section id="about" className={styles.sectionAbout}>
+          <div className={styles.about}>
+            <h1>Sobre mim</h1>
+            <p>
+              Olá, sou o Anderson. Sou técnico em Redes de Computadores e
+              bacharel em Sistemas de Informação pela Faculdade Paraíso do
+              Ceará. Sou um cara apaixonado por tecnologia, games e amo a área
+              de desenvolvimento.
+            </p>
+            <p>
+              Atualmente sou desenvolvedor front-end na Brisanet
+              Telecomunicações, trabalhando principalmente no desenvolvimento e
+              manutenção dos sistemas internos da empresa.
+            </p>
+            <div className={styles.divider}></div>
+            <h1>Minha stack</h1>
+            <br />
+            <h3>Linguagens</h3>
+            <div className={styles.technologies}>
+              <div className={styles.card}>
+                <i className="devicon-javascript-plain colored"></i>
+                <span>Javascript</span>
+              </div>
+              <div className={styles.card}>
+                <i className="devicon-typescript-plain colored"></i>
+                <span>TypeScript</span>
+              </div>
+              <div className={styles.card}>
+                <i className="devicon-python-plain"></i>
+                <span>Python</span>
+              </div>
+            </div>
+            <div className={styles.divider}></div>
+            <h3>Tecnologias</h3>
+            <div className={styles.technologies}>
+              <div className={styles.card}>
+                <i className="devicon-nodejs-plain colored"></i>
+                <span>NodeJS</span>
+              </div>
+              <div className={styles.card}>
+                <i className="devicon-react-original colored"></i>
+                <span>ReactJS</span>
+              </div>
+              <div className={styles.card}>
+                <i className="devicon-react-original"></i>
+                <span>React Native</span>
+              </div>
+              <div className={styles.card}>
+                <i className="devicon-angularjs-plain colored"></i>
+                <span>Angular 2+</span>
+              </div>
+              <div className={styles.card}>
+                <i className="devicon-django-plain colored"></i>
+                <span>Django</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="portfolio" className={styles.sectionAbout}>
+          <div className={styles.about}>
+            <h1>Portfólio</h1>
+          </div>
+        </section>
       </div>
-    </div>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default IndexPage;
