@@ -79,6 +79,7 @@ const IndexPage = () => {
         <section id="portfolio" className={styles.sectionAbout}>
           <div className={styles.about}>
             <h1>Portfólio</h1>
+            <p>Em desenvolvimento...</p>
           </div>
         </section>
       </div>
