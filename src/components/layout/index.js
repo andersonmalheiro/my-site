@@ -25,6 +25,10 @@ const Layout = ({ children }) => {
           rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
         />
+        <link
+          href="https://unpkg.com/css.gg/icons-compressed/icons.css"
+          rel="stylesheet"
+        />
       </Helmet>
       <div className="wrapper">
         {children}
@@ -39,9 +43,7 @@ const Layout = ({ children }) => {
               href="https://www.instagram.com/_anderson_97"
               target="_blank"
               rel="noopener noreferrer"
-              className={
-                `social bottom ${showSocial ? 'fade-in-bottom' : ''}`
-              }
+              className={`social bottom ${showSocial ? 'fade-in-bottom' : ''}`}
             >
               <FaInstagram className="icon" />
             </a>
@@ -49,9 +51,7 @@ const Layout = ({ children }) => {
               href="https://www.linkedin.com/in/andersonmalheiro"
               target="_blank"
               rel="noopener noreferrer"
-              className={
-                `social mid ${showSocial ? 'fade-in-bottom' : ''}`
-              }
+              className={`social mid ${showSocial ? 'fade-in-bottom' : ''}`}
             >
               <FaLinkedin className="icon" />
             </a>
@@ -59,9 +59,7 @@ const Layout = ({ children }) => {
               href="https://github.com/andersonmalheiro"
               target="_blank"
               rel="noopener noreferrer"
-              className={
-                `social midder ${showSocial ? 'fade-in-bottom' : ''}`
-              }
+              className={`social midder ${showSocial ? 'fade-in-bottom' : ''}`}
             >
               <FaGithub className="icon" />
             </a>
@@ -69,9 +67,7 @@ const Layout = ({ children }) => {
               href="mailto:malheiroanderson97@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={
-                `social top ${showSocial ? 'fade-in-bottom' : ''}`
-              }
+              className={`social top ${showSocial ? 'fade-in-bottom' : ''}`}
             >
               <MdEmail className="icon" />
             </a>
