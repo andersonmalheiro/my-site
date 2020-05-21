@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import ReactImage from 'react-image';
 
@@ -8,24 +8,58 @@ const Slider = ({ data, toggleShow }) => {
   const numSlides = data.length;
 
   const prev = () => {
+    console.log('----- prev ------');
+    console.group('Params');
+    console.log('index', index);
+    console.log('slides', numSlides);
+    console.log('rotation', currentRotation);
+    console.groupEnd();
+
     if (index === 0) {
       return;
     } else {
       setCurrentRotation(currentRotation - 100);
       setIndex(index - 1);
     }
-    console.log('rotation ->', currentRotation);
   };
 
   const next = () => {
+    console.log('----- next -----');
+    console.group('Params');
+    console.log('index', index);
+    console.log('slides', numSlides);
+    console.log('rotation', currentRotation);
+    console.groupEnd();
+
     if (index === numSlides - 1) {
       return;
     } else {
       setCurrentRotation(currentRotation + 100);
       setIndex(index + 1);
     }
-    console.log('rotation ->', currentRotation);
   };
+
+  /**
+   *
+   *
+  useEffect(() => {
+    window.addEventListener('keydown', event => {
+      console.log(event.key);
+      // event.preventDefault();
+      if (event.key === 'ArrowLeft') {
+        prev();
+      } else if (event.key === 'ArrowRight') {
+        next();
+      } else if (event.key === 'Escape') {
+        toggleShow();
+      }
+    });
+
+    return function () {
+      window.removeEventListener('keydown', () => {});
+    }
+  }, []);
+   */
 
   return (
     <div className={styles.modalWrapper}>
@@ -37,7 +71,7 @@ const Slider = ({ data, toggleShow }) => {
           className={`${styles.action} ${styles.previous}`}
           onClick={() => prev()}
         >
-          <i className="gg-chevron-left"></i>
+          <img src="/assets/icons/left-arrow.svg" alt="Anterior"/>
         </div>
 
         <div className={styles.mask}>
@@ -59,7 +93,7 @@ const Slider = ({ data, toggleShow }) => {
           className={`${styles.action} ${styles.next}`}
           onClick={() => next()}
         >
-          <i className="gg-chevron-right"></i>
+          <img src="/assets/icons/right-arrow.svg" alt="Próximo"/>
         </div>
       </div>
     </div>

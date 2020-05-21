@@ -8,13 +8,7 @@
   // justify-content: center;
   // align-items: center;
   z-index: 10;
-  overflow-x: hidden;
-
-  .closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+  // overflow-x: hidden;
 
   &::after {
     content: '';
@@ -28,13 +22,37 @@
   }
 }
 
+.closeButton {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #FFFFFF;
+  border-radius: 8px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 30;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    filter: brightness(0.9);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
 .slider {
   position: relative;
   margin: 0;
   padding: 0 4%;
   touch-action: pan-y;
   min-height: 80vh;
-  display: flex;
+  // display: flex;
   overflow: hidden;
 }
 
@@ -66,20 +84,20 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   background: white;
   border-radius: 8px;
-  width: 80%;
+  width: max-content;
   height: 100%;
   margin: auto;
 
   .imageContent {
-    height: 100%;
+    max-height: calc(100vh - 4em);
     width: auto;
   }
 }
 
 .action {
   cursor: pointer;
-  top: 0;
-  bottom: 0;
+  top: 5em;
+  bottom: 5em;
   width: 4%;
   display: flex;
   justify-content: center;
@@ -87,6 +105,10 @@
   position: absolute;
   align-self: center;
   z-index: 2;
+
+  img {
+    height: 40px;
+  }
 }
 
 .previous {

@@ -1,5 +1,27 @@
 $transitionTime: 0.2s;
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
 .content {
   overflow: hidden;
   overflow-y: auto;
@@ -123,20 +145,32 @@ h6 {
 }
 
 .projectCard {
-  border-radius: 8px;
   display: flex;
   flex: 1;
   flex-direction: column;
+  border-radius: 8px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  max-width: 200px;
-  max-height: 300px;
+  max-width: 250px;
   overflow: hidden;
-  cursor: pointer;
   transition: filter $transitionTime ease-in-out;
 
+  .preview-icon {
+    display: none;
+  }
+
   &:hover {
-    filter: brightness(0.95);
-    transition: filter $transitionTime ease-in-out;
+    transition: all 0.5s ease-in-out;
+
+    .projectCardContent {
+      filter: brightness(0.9);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .preview-icon {
+      display: block;
+      color: white;
+      filter: brightness(1) !important;
+    }
   }
 
   &:not(:last-child) {
@@ -144,19 +178,48 @@ h6 {
   }
 
   .projectCardContent {
+    cursor: pointer;
     height: 200px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #c1c1c1;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s ease-in-out;
 
-    .previewImage {
-      height: auto;
-      width: 100%;
+    &:hover {
+      transition: all 0.5s ease-in-out;
     }
   }
 
   .projectCardFooter {
-    padding: 1em;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px;
     background: #ffffff;
+    min-height: 120px;
+
+    .footer-title {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .footer-description {
+      color: rgba(0, 0, 0, 0.7);
+      text-align: justify;
+    }
+
+    .link {
+      text-decoration: none;
+      font-size: 14px;
+      color: #000000;
+      transition: all $transitionTime ease-in-out;
+
+      &:hover {
+        transition: all $transitionTime ease-in-out;
+        transform: translateY(-5px);
+      }
+    }
   }
 }
 
