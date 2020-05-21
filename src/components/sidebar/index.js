@@ -16,9 +16,9 @@ export default function Sidebar() {
       selected: currentUrl === '#about',
     },
     {
-      name: 'Porfolio',
+      name: 'Porfólio',
       hash: '#portfolio',
-      selected: currentUrl === 'portfolio',
+      selected: currentUrl === '#portfolio',
     },
   ]);
 
